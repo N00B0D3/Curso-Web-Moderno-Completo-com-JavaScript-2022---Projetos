@@ -16,8 +16,32 @@
     </style>
 </head>
 <body>
-    <div id="area">
+    <!--eventos:
+    mouseenter
+    mousemomve
+    mousedown
+    mouseup
+    click
+    mouseout-->
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
         interaja...
     </div>
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        function clicar() {
+            a.innerText = "clicou!"
+            a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = "entrou"
+        }
+        function sair() {
+            a.innerText = "saiu"
+            a.style.background = 'rgba(81, 211, 81, 0.664)'
+        }
+    </script>
 </body>
 </html>
